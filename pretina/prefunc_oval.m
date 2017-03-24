@@ -1,0 +1,19 @@
+function voidmap = prefunc_oval(voidmap, params)
+%PREFUNC_OVAL Adds margins around occupied area for placing an oval shape.
+%
+%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_CIRCLES.
+
+	[radius, ratio, tilt] = pretina_params(params, [], 1, 0);
+
+	kernel_oval = mk_shape( ...
+		map_radial( ...
+			ceil(max(radius ./ [1, ratio]) * 2), ...
+			[], ratio, tilt ...
+			), ...
+		radius ...
+		);
+	bumpmap = ones(size(voidmap) + 2);
+	bumpmap(2:(end - 1), 2:(end - 1)) = 1 - voidmap;
+	bumpmap = min(1, filter2(kernel_oval, bumpmap, 'same'));
+	voidmap = 1 - bumpmap(2:(end - 1), 2:(end - 1));
+end
