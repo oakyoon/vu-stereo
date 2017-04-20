@@ -4,9 +4,8 @@ function adj_info = AdjustStereoFramesImpl(wptr, adj_conf, cxcy)
 		Screen('MakeTexture', wptr, adj_conf.Image1), ...
 		Screen('MakeTexture', wptr, adj_conf.Image2) ...
 		];
-	switch_limits = adj_conf.SwitchLimits;
-	which_eye     = adj_conf.WhichEye;
-	image_rect    = RectOfMatrix(adj_conf.Image1);
+	which_eye  = adj_conf.WhichEye;
+	image_rect = RectOfMatrix(adj_conf.Image1);
 	frame_rects = [ ...
 		CenterRectOnPoint(image_rect, cxcy(1, 1), cxcy(1, 2));
 		CenterRectOnPoint(image_rect, cxcy(2, 1), cxcy(2, 2));
@@ -36,10 +35,12 @@ function adj_info = AdjustStereoFramesImpl(wptr, adj_conf, cxcy)
 	% adjustment loop
 	RestrictKeysForKbCheck(keys(:, 1)');
 	adjusted = false;
+	n_switch = 0;
 	while ~adjusted
 		Screen('SelectStereoDrawBuffer', wptr, which_eye);
 		Screen('DrawTexture', wptr, image_tex(1), [], frame_rects(which_eye + 1, :));
-		if mod(prev_flip - base_flip, adj_conf.FlickerCycle) < adj_conf.FlickerSpan
+		if (n_switch >= adj_conf.FlickerAfter) && ...
+				(mod(prev_flip - base_flip, adj_conf.FlickerCycle) < adj_conf.FlickerSpan)
 			Screen('SelectStereoDrawBuffer', wptr, 1 - which_eye);
 			Screen('DrawTexture', wptr, image_tex(2), [], frame_rects(2 - which_eye, :));
 		end
@@ -57,8 +58,8 @@ function adj_info = AdjustStereoFramesImpl(wptr, adj_conf, cxcy)
 						elseif k == 5
 							base_flip = prev_flip;
 							which_eye = 1 - which_eye;
-							switch_limits = switch_limits - 1;
-							if switch_limits <= 0
+							n_switch = n_switch + 1;
+							if n_switch >= adj_conf.SwitchLimits
 								adjusted = true;
 							end
 						% arrow keys pressed
