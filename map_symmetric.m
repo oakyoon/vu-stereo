@@ -2,7 +2,7 @@ function pixelmap = map_symmetric(varargin)
 %MAP_SYMMETRIC Symmetric equivalent of MAP_LINEAR.
 %
 %   PIXELMAP = MAP_SYMMETRIC(ROWS [,COLS] [,TILT]) returns a ROWS-by-COLS
-%   matrix, whose element increases as its location moves away from the center
+%   matrix, whose value increases as its location moves away from the center
 %   of the x-axis tilted by TILT degrees.
 %
 %   Arguments:

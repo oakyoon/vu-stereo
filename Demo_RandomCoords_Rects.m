@@ -4,8 +4,8 @@
 %
 %   See <a href="matlab:edit Demo_RandomCoords_Rects;">source code</a> for details.
 %
-%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_CIRCLES,
-%   DEMO_RANDOMCOORDS_GAUSSIAN.
+%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_CIRCLES, 
+%   DEMO_RANDOMCOORDS_POLYGONS, DEMO_RANDOMCOORDS_GAUSSIAN.
 
 n_rects = 30;                          % number of rectangles: 30
 r_rects = rand(n_rects, 1) * 10 + 15;  % half widths of rectangles: 10 - 25 px

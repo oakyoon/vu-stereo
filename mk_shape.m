@@ -2,7 +2,7 @@ function shapemat = mk_shape(varargin)
 %MK_SHAPE Converts a matrix using a step function.
 %
 %   SHAPEMAT = MK_SHAPE(PIXELMAP, RADIUS [,PXPITCH]) returns a matrix with the
-%   same size as PIXELMAP. Elements in the PIXELMAP are thresholded at the value
+%   same size as PIXELMAP. Values in the PIXELMAP are thresholded at the value
 %   of RADIUS, and values within the range of PXPITCH from the threshold will be
 %   anti-aliased.
 %

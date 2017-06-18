@@ -2,9 +2,9 @@ function pixelmap = map_radial(varargin)
 %MAP_RADIAL Generates a map of radially increasing values.
 %
 %   PIXELMAP = MAP_RADIAL(ROWS [,COLS] [,RATIO] [,TILT]) returns a ROWS-by-COLS
-%   matrix, whose element is the distance from the center of the output matrix.
-%   Increments in the y-axis are determined by RATIO. The x- and y- axes will be
-%   tilted by TILT degrees.
+%   matrix, whose value increases from the center with a radial pattern.
+%   The increment in the y-axis are determined by RATIO. The x- and y- axes will
+%   be tilted by TILT degrees.
 %
 %   Arguments:
 %      ROWS  - number of rows of the output matrix.
@@ -12,7 +12,7 @@ function pixelmap = map_radial(varargin)
 %      RATIO - aspect ratio of increments, 1 if empty or not provided.
 %      TILT  - tilt angle of the x- and y- axes, 0 if empty or not provided.
 %
-%   See also MAP_RECTANGULAR.
+%   See also MAP_RECTANGULAR, MAP_POLYGONAL.
 
 	rows  = pretina_arg(varargin, 1, mfilename, 'rows',  [],   {'numeric'}, {'scalar', 'integer', 'finite', 'positive'});
 	cols  = pretina_arg(varargin, 2, mfilename, 'cols',  rows, {'numeric'}, {'scalar', 'integer', 'finite', 'positive'});

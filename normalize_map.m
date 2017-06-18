@@ -2,7 +2,7 @@ function normmap = normalize_map(varargin)
 %NORMALIZE_MAP Normalizes elements in a matrix to a range between 0 and 1.
 %
 %   NORMMAP = NORMALIZE_MAP(PIXELMAP [,MINVAL] [,MAXVAL]) returns a matrix with
-%   the same size as PIXELMAP, whose element ranges between 0 and 1. MINVAL will
+%   the same size as PIXELMAP, whose values range between 0 and 1. MINVAL will
 %   be scaled to 0 and MAXVAL to 1.
 %
 %   Arguments:

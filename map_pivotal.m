@@ -2,7 +2,7 @@ function pixelmap = map_pivotal(varargin)
 %MAP_PIVOTAL Generates a map of angles measured from the vertical meridian.
 %
 %   PIXELMAP = MAP_PIVOTAL(ROWS [,COLS] [,PHASE]) returns a ROWS-by-COLS matrix,
-%   whose element is an angle measured from the reference axis tilted by PHASE
+%   whose value is an angle measured from the reference axis tilted by PHASE
 %   degrees from the vertical meridian.
 %
 %   Arguments:

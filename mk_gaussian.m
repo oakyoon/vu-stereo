@@ -2,7 +2,7 @@ function gaussianmat = mk_gaussian(varargin)
 %MK_GAUSSIAN Converts a matrix using a Gaussain function.
 %
 %   GAUSSIANMAT = MK_GAUSSIAN(PIXELMAP, SD [,X0]) returns a matrix with the
-%   same size as PIXELMAP. Elements in the PIXELMAP are transformed using a
+%   same size as PIXELMAP. Values in the PIXELMAP are transformed using a
 %   Gaussian function with a standard deviation of SD and a mean of X0. Output
 %   values are not scaled: the value is 1 at the center of the Gaussian.
 %

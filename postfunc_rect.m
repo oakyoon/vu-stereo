@@ -1,5 +1,5 @@
 function voidmap = postfunc_rect(voidmap, params, mx, my)
-%POSTFUNC_RECT Marks a rectangle shape as occupied area in the VOIDMAP.
+%POSTFUNC_RECT Marks a rectangle as occupied area in the VOIDMAP.
 %
 %   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_RECTS.
 

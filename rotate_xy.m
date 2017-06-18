@@ -2,7 +2,7 @@ function [rx, ry] = rotate_xy(varargin)
 %ROTATE_XY Rotates maps of x- and y-values in the monitor coordinate.
 %
 %   [RX, RY] = ROTATE_XY(BX ,BY, TILT) returns matrices with the same size as BX
-%   and BY, whose element is an x- or y-value tilted by TILT degrees from the
+%   and BY, whose values are x- and y-values tilted by TILT degrees from the
 %   given BX and BY, respectively.
 %
 %   Arguments:

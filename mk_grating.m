@@ -2,7 +2,7 @@ function gratingmat = mk_grating(varargin)
 %MK_GRATING Converts a matrix using a sinusoidal function.
 %
 %   GRATINGMAT = MK_GRATING(PIXELMAP, FREQ [,PHASE]) returns a matrix with the
-%   same size as PIXELMAP. Elements in the PIXELMAP are transformed using a
+%   same size as PIXELMAP. Values in the PIXELMAP are transformed using a
 %   sinusoidal function with a frequency of FREQ, and the phase of the sinusoid
 %   will be shifted by PHASE degrees. Output values are scaled to a range
 %   between 0 and 1.
