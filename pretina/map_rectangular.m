@@ -2,9 +2,9 @@ function pixelmap = map_rectangular(varargin)
 %MAP_RECTANGULAR Rectangular equivalent of MAP_RADIAL.
 %
 %   PIXELMAP = MAP_RECTANGULAR(ROWS [,COLS] [,RATIO] [,TILT]) returns a
-%   ROWS-by-COLS matrix, whose element is the distance from the x- or y-axes of
-%   the output matrix. Increments in the y-axis are determined by RATIO. The x-
-%   and y- axes will be tilted by TILT degrees.
+%   ROWS-by-COLS matrix, whose value increases from the center with a
+%   rectangular pattern. The increments in the y-axis are determined by RATIO.
+%   The x- and y- axes will be tilted by TILT degrees.
 %
 %   Arguments:
 %      ROWS  - number of rows of the output matrix.
@@ -12,7 +12,7 @@ function pixelmap = map_rectangular(varargin)
 %      RATIO - aspect ratio of increments, 1 if empty or not provided.
 %      TILT  - tilt angle of the x- and y- axes, 0 if empty or not provided.
 %
-%   See also MAP_RADIAL.
+%   See also MAP_RADIAL, MAP_POLYGONAL.
 
 	rows  = pretina_arg(varargin, 1, mfilename, 'rows',  [],   {'numeric'}, {'scalar', 'integer', 'finite', 'positive'});
 	cols  = pretina_arg(varargin, 2, mfilename, 'cols',  rows, {'numeric'}, {'scalar', 'integer', 'finite', 'positive'});

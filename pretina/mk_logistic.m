@@ -2,7 +2,7 @@ function logisticmat = mk_logistic(varargin)
 %MK_LOGISTIC Converts a matrix using a sigmoid function.
 %
 %   LOGISTICMAT = MK_LOGISTIC(PIXELMAP, RADIUS [,K]) returns a matrix with the
-%   same size as PIXELMAP. Elements in the PIXELMAP are transformed using a
+%   same size as PIXELMAP. Values in the PIXELMAP are transformed using a
 %   sigmoid function with a midpoint of RADIUS and a steepness of K.
 %
 %   Arguments:

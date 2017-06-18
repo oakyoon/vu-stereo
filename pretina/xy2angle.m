@@ -3,7 +3,7 @@ function anglemat = xy2angle(varargin)
 %meridian.
 %
 %   ANGLEMAT = XY2ANGLE(BX ,BY) returns a matrix with the same size as BX and
-%   BY, whose element is an angle measured from the vertical meridian.
+%   BY, whose value is an angle measured from the vertical meridian.
 %
 %   Arguments:
 %      BX - matrix containing x-values in the monitor coordinate.

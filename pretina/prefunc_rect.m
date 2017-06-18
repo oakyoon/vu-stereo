@@ -1,5 +1,5 @@
 function voidmap = prefunc_rect(voidmap, params)
-%PREFUNC_RECT Adds margins around occupied area for placing a rectangle shape.
+%PREFUNC_RECT Adds margins around occupied area for placing a rectangle.
 %
 %   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_RECTS.
 

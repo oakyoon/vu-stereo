@@ -2,7 +2,7 @@ function pixelmap = map_linear(varargin)
 %MAP_LINEAR Generates a map of linearly increasing values.
 %
 %   PIXELMAP = MAP_LINEAR(ROWS [,COLS] [,TILT]) returns a ROWS-by-COLS matrix,
-%   whose element increases as its location moves along the x-axis tilted by
+%   whose value increases as its location moves along the x-axis tilted by
 %   TILT degrees. The element has value of 0 at the center of the output matrix.
 %
 %   Arguments:

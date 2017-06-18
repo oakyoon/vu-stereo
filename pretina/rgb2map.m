@@ -2,8 +2,7 @@ function rgbmap = rgb2map(varargin)
 %RGB2MAP Generates a 3-layer map from a given RGB value.
 %
 %   RGBMAP = RGB2MAP(RGB ,ROWS [,COLS]) returns a ROWS-by-COLS-by-3 matrix,
-%   whose element is assigend R, G, or B from the given RGB value depending on
-%   its layer.
+%   whose values are assigend from the given RGB depending on the layer.
 %
 %   Arguments:
 %      RGB  - 3-column vector containing R, G, and B values.

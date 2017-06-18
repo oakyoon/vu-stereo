@@ -3,7 +3,8 @@
 %
 %   See <a href="matlab:edit Demo_RandomCoords_Circles;">source code</a> for details.
 %
-%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_RECTS, DEMO_RANDOMCOORDS_GAUSSIAN.
+%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_RECTS, DEMO_RANDOMCOORDS_POLYGONS,
+%   DEMO_RANDOMCOORDS_GAUSSIAN.
 
 n_circles = 40;                           % number of circles: 40
 r_circles = rand(n_circles, 1) * 25 + 5;  % radii of circles: 5 - 30 px

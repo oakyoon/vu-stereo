@@ -3,7 +3,8 @@
 %
 %   See <a href="matlab:edit Demo_RandomCoords_Gaussian;">source code</a> for details.
 %
-%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_CIRCLES, DEMO_RANDOMCOORDS_RECTS.
+%   See also RANDOM_COORDS, DEMO_RANDOMCOORDS_CIRCLES, DEMO_RANDOMCOORDS_RECTS,
+%   DEMO_RANDOMCOORDS_POLYGONS.
 
 n_envelopes = 50;								% number of envelopes: 50
 sd_envelopes = ones(n_envelopes, 1) * 5;		% S.D. of Gaussian: 5 px
