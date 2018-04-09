@@ -1,8 +1,8 @@
 function images = DotFrames_Grid(varargin)
 	init_pretina();
 	pxpd        = pretina_arg(varargin, 1, mfilename, 'pxpd',        [],        {'numeric'}, {'scalar', 'finite', 'positive'});
-	dot_size    = pretina_arg(varargin, 2, mfilename, 'dot_size',    0.1,       {'numeric'}, {'scalar', 'finite', 'positive'});
-	dot_spacing = pretina_arg(varargin, 3, mfilename, 'dot_spacing', 1.5,       {'numeric'}, {'scalar', 'finite', 'positive'});
+	dot_size    = pretina_arg(varargin, 2, mfilename, 'dot_size',    0.08,      {'numeric'}, {'scalar', 'finite', 'positive'});
+	dot_spacing = pretina_arg(varargin, 3, mfilename, 'dot_spacing', 1.00,      {'numeric'}, {'scalar', 'finite', 'positive'});
 	dot_rows    = pretina_arg(varargin, 4, mfilename, 'dot_rows',    5,         {'numeric'}, {'scalar', 'integer', 'finite', 'positive'});
 	dot_cols    = pretina_arg(varargin, 5, mfilename, 'dot_cols',    dot_rows,  {'numeric'}, {'scalar', 'integer', 'finite', 'positive'});
 	dot_color   = pretina_arg(varargin, 6, mfilename, 'dot_color',   [0 0 0],   {'numeric'}, {'nonempty', 'real', 'finite', 'nonnan', 'size', [1 3]});
@@ -12,7 +12,7 @@ function images = DotFrames_Grid(varargin)
 
 	dot_size    = dot_size * pxpd;
 	dot_spacing = round(dot_spacing * pxpd);
-	frame_size  = ([dot_rows, dot_cols] + 1) * dot_spacing;
+	frame_size  = [dot_rows, dot_cols] * dot_spacing;
 	cross_r     = cross_r * pxpd;
 	cross_t     = cross_t * pxpd;
 
@@ -22,7 +22,7 @@ function images = DotFrames_Grid(varargin)
 		for yy = 1:dot_rows
 			if (xx ~= (dot_cols * .5 + .5)) || (yy ~= (dot_rows * .5 + .5))
 				[mx, my] = meshgrid(1:frame_size);
-				mecc = xy2ecc(mx - (xx * dot_spacing), my - (yy * dot_spacing));
+				mecc = xy2ecc(mx - ((xx - .5) * dot_spacing), my - ((yy - .5) * dot_spacing));
 				dmat = mk_shape(mecc, dot_size);
 				alpha_dots = apply_alpha(alpha_dots, ones(frame_size), dmat);
 			end

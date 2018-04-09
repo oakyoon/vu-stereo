@@ -40,7 +40,7 @@ function adj_info = AdjustStereoFrames(wptr, sbj_id, adj_conf)
 			KbName('UnifyKeyNames');
 			clear KbWait;
 			ListenChar(2);
-			[wptr, rect] = OpenStereoWindow(0, adj_conf.BgColor);
+			[wptr, rect] = Screen('OpenWindow', 0, adj_conf.BgColor);
 			Screen('BlendFunction', wptr, GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 			Screen('Preference', 'TextAntiAliasing', 2);
 			Screen('Preference', 'TextRenderer',     1);
@@ -50,7 +50,7 @@ function adj_info = AdjustStereoFrames(wptr, sbj_id, adj_conf)
 		end
 		if ~exist('cxcy', 'var') || isempty(cxcy)
 			[scx, scy] = RectCenter(rect);
-			cxcy = [scx, scy; scx, scy];
+			cxcy = round([scx * 0.5, scy; scx * 1.5, scy]);
 		end
 
 		% instruction

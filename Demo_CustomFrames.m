@@ -8,7 +8,7 @@ try
 	KbName('UnifyKeyNames');
 	clear KbWait;
 	ListenChar(2);
-	[wptr, rect] = OpenStereoWindow(0, bg_color);
+	[wptr, rect] = Screen('OpenWindow', 0, bg_color, [0 0 1024 768]);
 	Screen('BlendFunction', wptr, GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	Screen('Preference', 'TextAntiAliasing', 2);
 	Screen('Preference', 'TextRenderer',     1);

@@ -2,8 +2,8 @@ function images = DotFrames_Annulus(varargin)
 	init_pretina();
 	pxpd        = pretina_arg(varargin, 1, mfilename, 'pxpd',        [],                   {'numeric'}, {'scalar', 'finite', 'positive'});
 	dot_size    = pretina_arg(varargin, 2, mfilename, 'dot_size',    0.2,                  {'numeric'}, {'scalar', 'finite', 'positive'});
-	dot_spacing = pretina_arg(varargin, 3, mfilename, 'dot_spacing', 9,                    {'numeric'}, {'scalar', 'finite', 'positive'});
-	annulus_r   = pretina_arg(varargin, 4, mfilename, 'annulus_r',   3.25,                 {'numeric'}, {'scalar', 'finite', 'positive'});
+	dot_spacing = pretina_arg(varargin, 3, mfilename, 'dot_spacing', 12,                   {'numeric'}, {'scalar', 'finite', 'positive'});
+	annulus_r   = pretina_arg(varargin, 4, mfilename, 'annulus_r',   2.25,                 {'numeric'}, {'scalar', 'finite', 'positive'});
 	dot_colors  = pretina_arg(varargin, 5, mfilename, 'dot_colors',  [0 0 0; 255 255 255], {'numeric'}, {'nonempty', 'real', 'finite', 'nonnan', 'size', [NaN 3]});
 	cross_r     = pretina_arg(varargin, 6, mfilename, 'cross_r',     0.15,                 {'numeric'}, {'scalar', 'finite', 'positive'});
 	cross_t     = pretina_arg(varargin, 7, mfilename, 'cross_t',     0.025,                {'numeric'}, {'scalar', 'finite', 'positive'});
