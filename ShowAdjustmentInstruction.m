@@ -4,7 +4,10 @@ function ShowAdjustmentInstruction(wptr, adj_conf, cxcy)
 	which_eye  = adj_conf.WhichEye;
 	frame_rect = CenterRectOnPoint(RectOfMatrix(adj_conf.Image1), ...
 		cxcy(which_eye + 1, 1), cxcy(which_eye + 1, 2));
-	% set text font & size
+	% set text color, font, & size
+	if isfield(adj_conf, 'TextColor')
+		prevTextColor = Screen('TextColor', wptr, adj_conf.TextColor);
+	end
 	if isfield(adj_conf, 'TextFont')
 		prevTextFont = Screen('TextFont', wptr, adj_conf.TextFont);
 	end
@@ -21,6 +24,9 @@ function ShowAdjustmentInstruction(wptr, adj_conf, cxcy)
 	Screen('Flip', wptr);
 	% clear texture, reset text font & size 
 	Screen('Close', image_tex);
+	if exist('prevTextColor', 'var')
+		Screen('TextColor', wptr, prevTextColor);
+	end
 	if exist('prevTextFont', 'var')
 		Screen('TextFont', wptr, prevTextFont);
 	end
