@@ -28,7 +28,6 @@ function adj_info = AdjustStereoFramesImpl(wptr, adj_conf, cxcy)
 		 ];
 	key_limits = zeros(1, size(keys, 1));
 	% first frame
-	Screen('SelectStereoDrawBuffer', wptr, which_eye);
 	Screen('DrawTexture', wptr, image_tex(1), [], frame_rects(which_eye + 1, :));
 	base_flip = Screen('Flip', wptr);
 	prev_flip = base_flip;
