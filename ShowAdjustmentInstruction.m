@@ -15,7 +15,6 @@ function ShowAdjustmentInstruction(wptr, adj_conf, cxcy)
 		prevTextSize = Screen('TextSize', wptr, adj_conf.TextSize);
 	end
 	% show frame & instruction text
-	Screen('SelectStereoDrawBuffer', wptr, which_eye);
 	Screen('DrawTexture', wptr, image_tex, [], frame_rect);
 	DrawFormattedText(wptr, adj_conf.Instruction, ...
 		cxcy(which_eye + 1, 1) + adj_conf.TextOffsetX, ...

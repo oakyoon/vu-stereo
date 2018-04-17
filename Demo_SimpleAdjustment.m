@@ -32,10 +32,8 @@ try
 		RectOfMatrix(image2), ...
 		adj_info.rcx, adj_info.rcy);
 	% show textures & wait for key press
-	Screen('SelectStereoDrawBuffer', wptr, 0);  % left eye
-	Screen('DrawTexture', wptr, texture1, [], image1_rect);
-	Screen('SelectStereoDrawBuffer', wptr, 1);  % right eye
-	Screen('DrawTexture', wptr, texture2, [], image2_rect);
+	Screen('DrawTexture', wptr, texture1, [], image1_rect);  % left eye
+	Screen('DrawTexture', wptr, texture2, [], image2_rect);  % right eye
 	Screen('Flip', wptr);
 	RestrictKeysForKbCheck([KbName('space'), KbName('ESCAPE')]);
 	KbWait([], 3);
