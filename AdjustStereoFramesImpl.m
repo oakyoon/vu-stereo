@@ -38,16 +38,14 @@ function adj_info = AdjustStereoFramesImpl(wptr, adj_conf, cxcy)
 	n_switch = 0;
 	while ~adjusted
 		if n_switch < adj_conf.FlickerAfter
-			Screen('SelectStereoDrawBuffer', wptr, which_eye);
 			Screen('DrawTexture', wptr, image_tex(1), [], frame_rects(which_eye + 1, :));
 		else
 			if mod(prev_flip - base_flip, adj_conf.FlickerCycle) < adj_conf.FlickerSpan
-				Screen('SelectStereoDrawBuffer', wptr, which_eye);
 				Screen('DrawTexture', wptr, image_tex(2), [], frame_rects(which_eye + 1, :));
 			end
-			Screen('SelectStereoDrawBuffer', wptr, 1 - which_eye);
 			Screen('DrawTexture', wptr, image_tex(1), [], frame_rects(2 - which_eye, :));
 		end
+		Screen('DrawingFinished', wptr);
 		Screen('AsyncFlipBegin', wptr);
 		prev_flip = 0;
 		while prev_flip == 0
