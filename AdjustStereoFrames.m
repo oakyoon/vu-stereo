@@ -31,14 +31,14 @@ function adj_info = AdjustStereoFrames(wptr, sbj_id, adj_conf)
 	datafile = fullfile(adj_conf.DataDir, [sbj_id, '.mat']);
 	if exist(datafile, 'file')
 		load(datafile, 'adj_info');
-		cxcy = adj_info.cxcy; %#ok<NODEF>
+		cxcy = adj_info.cxcy;
 	end
 
 	try
 		% open window (if needed)
 		if ~window_open
+			clear PsychHID KbCheck KbWait;
 			KbName('UnifyKeyNames');
-			clear KbWait;
 			ListenChar(2);
 			[wptr, rect] = Screen('OpenWindow', 0, adj_conf.BgColor);
 			Screen('BlendFunction', wptr, GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

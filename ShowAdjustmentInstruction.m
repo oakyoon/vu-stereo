@@ -34,6 +34,6 @@ function ShowAdjustmentInstruction(wptr, adj_conf, cxcy)
 	end
 	% wait for key press
 	RestrictKeysForKbCheck([adj_conf.SwitchKey, adj_conf.EscapeKey]);
-	KbWait([], 3);
+	KbWait(-3, 3);
 	RestrictKeysForKbCheck([]);
 end
